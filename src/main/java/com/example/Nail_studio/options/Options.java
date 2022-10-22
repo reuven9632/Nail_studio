@@ -1,7 +1,7 @@
 package com.example.Nail_studio.options;
 
 import com.example.Nail_studio.branchoffice.BranchOffice;
-import com.example.Nail_studio.order.Orders;
+import com.example.Nail_studio.order.Order;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -84,24 +84,29 @@ public class Options {
                 orphanRemoval = true,
                 cascade = {CascadeType.PERSIST, CascadeType.REMOVE, CascadeType.REFRESH},
                 fetch = FetchType.LAZY)
-    private Orders orders;
+    private Order order;
 
 
     public Options(String text) {
         this.text = text;
     }
 
-    public Options(String text, Orders orders) {
+    public Options(String text, Order order) {
         this.text = text;
-        this.orders = orders;
-        orders.setOptions(this);
+        this.order = order;
+        order.setOptions(this);
     }
 
-    public Options(String text, BranchOffice branchOffice, Orders orders) {
+    public Options(String text, BranchOffice branchOffice) {
         this.text = text;
         this.branchOffice = branchOffice;
-        this.orders = orders;
-        orders.setOptions(this);
+    }
+
+    public Options(String text, BranchOffice branchOffice, Order order) {
+        this.text = text;
+        this.branchOffice = branchOffice;
+        this.order = order;
+        order.setOptions(this);
     }
 
     public Options(String text,
@@ -113,7 +118,7 @@ public class Options {
                    Boolean artNails,
                    Integer amountOfArtNails,
                    BranchOffice branchOffice,
-                   Orders orders) {
+                   Order order) {
         this.text = text;
         this.buildedNails = buildedNails;
         this.oneColor = oneColor;
@@ -123,8 +128,8 @@ public class Options {
         this.artNails = artNails;
         this.amountOfArtNails = amountOfArtNails;
         this.branchOffice = branchOffice;
-        this.orders = orders;
-        orders.setOptions(this);
+        this.order = order;
+        order.setOptions(this);
     }
 
     public void addToBranchOffice(BranchOffice branchOffice){
@@ -139,9 +144,9 @@ public class Options {
 
 
 
-    public void setOrders(Orders orders){
-        this.orders = orders;
-        orders.setOptions(this);
+    public void setOrder(Order order){
+        this.order = order;
+        order.setOptions(this);
     }
 
 

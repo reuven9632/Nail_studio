@@ -1,5 +1,6 @@
 package com.example.Nail_studio.order;
 
+import com.example.Nail_studio.client.Client;
 import com.example.Nail_studio.options.Options;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -11,9 +12,9 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @Getter
 @Setter
-@Entity(name = "Orders")
+@Entity(name = "Order")
 @Table(name = "orders")
-public class Orders {
+public class Order {
 
     @Id
     @SequenceGenerator(name = "order_sequence",
@@ -44,22 +45,48 @@ public class Orders {
     private Options options;
 
 
+    @ManyToOne
+    @JoinColumn(name = "client_id",
+                referencedColumnName = "id",
+                foreignKey = @ForeignKey(name = "order__client_id_fk"))
+    private Client client;
 
-    public Orders(LocalDateTime createdAt, Boolean approved) {
+
+
+    public Order(LocalDateTime createdAt, Boolean approved) {
         this.createdAt = createdAt;
         this.approved = approved;
     }
 
-    public Orders(LocalDateTime createdAt, Boolean approved, Options options) {
+    public Order(LocalDateTime createdAt, Boolean approved, Options options) {
         this.createdAt = createdAt;
         this.approved = approved;
         this.options = options;
-        options.setOrders(this);
+        options.setOrder(this);
     }
+
+    public Order(LocalDateTime createdAt, Boolean approved, Options options, Client client) {
+        this.createdAt = createdAt;
+        this.approved = approved;
+        this.options = options;
+        options.setOrder(this);
+        this.client = client;
+    }
+
+    /*@Override
+    public String toString() {
+        return "Order{" +
+                "id=" + id +
+                ", createdAt=" + createdAt +
+                ", approved=" + approved +
+                ", options=" + options +
+                ", client=" + client +
+                '}';
+    }*/
 
     @Override
     public String toString() {
-        return "Orders{" +
+        return "Order{" +
                 "id=" + id +
                 ", createdAt=" + createdAt +
                 ", approved=" + approved +

@@ -2,15 +2,17 @@ package com.example.Nail_studio.branchoffice;
 
 import com.example.Nail_studio.client.Client;
 import com.example.Nail_studio.client.ClientRepository;
+import com.example.Nail_studio.client.ClientValidator;
 import com.example.Nail_studio.feedback.Feedback;
 import com.example.Nail_studio.feedback.FeedbackRepository;
 import com.example.Nail_studio.options.Options;
 import com.example.Nail_studio.options.OptionsRepository;
-import com.example.Nail_studio.order.Orders;
+import com.example.Nail_studio.order.Order;
 import com.example.Nail_studio.order.OrderRepository;
 import com.example.Nail_studio.role.Role;
 import com.example.Nail_studio.specialist.Specialist;
 import com.example.Nail_studio.specialist.SpecialistRepository;
+import com.example.Nail_studio.validator.ValidatorResult;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -57,24 +59,49 @@ public class BranchOfficeConfiguration {
 
 
 
-
-
-
-            Client emilSamaev = new Client("Emil", "Samaev", "EmilSamaev@gmail.com", "054-1234567", Role.CLIENT);
-            clientRepository.save(emilSamaev);
-            System.out.println(emilSamaev);
-
             Options option = new Options("some text of options");
             optionsRepository.save(option);
+            Options option2 = new Options("some text of options 2 ", alonaNails);
+            optionsRepository.save(option2);
+            Options option3 = new Options("some text of options 3 ", alonaNails);
+            optionsRepository.save(option3);
 
-            Orders orders = new Orders(LocalDateTime.now(), false, option);
-            orderRepository.save(orders);
-            Orders orders2 = new Orders(LocalDateTime.now(), false, option);
-            orderRepository.save(orders2);
+            Order order = new Order(LocalDateTime.now(), false, option);
+            orderRepository.save(order);
+            Order order2 = new Order(LocalDateTime.now(), false, option2);
+            orderRepository.save(order2);
 //            optionsRepository.save(option);
 
 
-            System.out.println(orders);
+
+            Client emilSamaev = new Client("Emil", "Samaev", "EmilSamaev@gmail.com", "054-1234568", Role.CLIENT);
+            clientRepository.save(emilSamaev);
+            System.out.println(emilSamaev);
+
+            emilSamaev.addOrder(order2);
+            clientRepository.save(emilSamaev);
+            System.out.println(emilSamaev);
+
+
+            Order order1 = new Order(LocalDateTime.now(), false, option3);
+            orderRepository.save(order1);
+            Client sara = new Client("Sara",
+                                    "Kohan",
+                                    "SaraKohan@gmail.com",
+                                    "054-1234567",
+                                    Role.CLIENT);
+            clientRepository.save(sara);
+            sara.addOrder(order1);
+            orderRepository.save(order1);
+            System.out.println(sara);
+
+
+
+
+
+
+
+            System.out.println(order);
             System.out.println(option);
 
 
@@ -86,7 +113,7 @@ public class BranchOfficeConfiguration {
 
 
 
-            Options option1 = new Options("some text of options", new Orders(LocalDateTime.now(), false));
+            Options option1 = new Options("some text of options", new Order(LocalDateTime.now(), false));
             optionsRepository.save(option1);
 
 
@@ -97,6 +124,10 @@ public class BranchOfficeConfiguration {
 
 
             System.out.println(option);
+
+
+            ValidatorResult result = ClientValidator.allValidations().apply(emilSamaev);
+            System.out.println("result of validating " + emilSamaev.getFirstName() + " : " + result);
 
 
         };

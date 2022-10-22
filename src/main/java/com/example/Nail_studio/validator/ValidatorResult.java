@@ -1,0 +1,13 @@
+package com.example.Nail_studio.validator;
+
+public enum ValidatorResult {
+    SUCCESS,
+    NOT_VALID_STRING_IS_EMPTY,
+    NOT_VALID_FIRSTNAME_IS_EMPTY,
+    NOT_VALID_LASTNAME_IS_EMPTY,
+    NOT_VALID_EMAIL_IS_EMPTY,
+    NOT_VALID_PHONE_IS_EMPTY,
+    NOT_VALID_EMAIL_REGEX,
+    NOT_VALID_PHONE_REGEX,
+    NOT_VALID
+}

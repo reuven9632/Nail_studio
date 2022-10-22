@@ -1,12 +1,14 @@
 package com.example.Nail_studio.client;
 
+import com.example.Nail_studio.order.Order;
 import com.example.Nail_studio.role.Role;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import net.bytebuddy.utility.dispatcher.JavaDispatcher;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @NoArgsConstructor
 @Getter
@@ -55,6 +57,13 @@ public class Client {
     private Role role;
 
 
+    @OneToMany(mappedBy = "client",
+            cascade = CascadeType.ALL/*{CascadeType.PERSIST, CascadeType.REMOVE, CascadeType.REFRESH}*/,
+            orphanRemoval = true,
+            fetch = FetchType.LAZY)
+    private List<Order> order = new ArrayList<>();
+
+
     public Client(String firstName, String lastName, String email, String phone, Role role) {
         this.firstName = firstName;
         this.lastName = lastName;
@@ -63,6 +72,19 @@ public class Client {
         this.role = role;
     }
 
+
+    //todo check method addOrder    and    removeOrder
+    public void addOrder(Order order) {
+        this.order.add(order);
+        order.setClient(this);
+    }
+
+    public void removeOrder(Order order){
+        if (this.order.contains(order)){
+            this.order.remove(order);
+            order.setClient(null);
+        }
+    }
 
     @Override
     public String toString() {
@@ -73,6 +95,20 @@ public class Client {
                 ", email='" + email + '\'' +
                 ", phone='" + phone + '\'' +
                 ", role=" + role +
+                ", order=" + order +
                 '}';
     }
+
+    /*@Override
+    public String toString() {
+        return "Client{" +
+                "id=" + id +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", email='" + email + '\'' +
+                ", phone='" + phone + '\'' +
+                ", role=" + role +
+                '}';
+    }*/
+
 }

@@ -70,9 +70,10 @@ public class BranchOffice {
     }
 
     public void removeSpecialist(Specialist specialist){
-        if (this.specialists.contains(specialist))
+        if (this.specialists.contains(specialist)){
             this.specialists.remove(specialist);
-        specialist.setBranchOffice(null);
+            specialist.setBranchOffice(null);
+        }
     }
 
 
