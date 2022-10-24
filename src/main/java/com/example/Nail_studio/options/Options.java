@@ -83,6 +83,7 @@ public class Options {
     @OneToOne(mappedBy = "options",
                 orphanRemoval = true,
                 cascade = {CascadeType.PERSIST, CascadeType.REMOVE, CascadeType.REFRESH},
+//            todo Ceck if need change to EAGER
                 fetch = FetchType.LAZY)
     private Order order;
 

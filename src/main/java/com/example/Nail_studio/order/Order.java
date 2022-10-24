@@ -1,6 +1,7 @@
 package com.example.Nail_studio.order;
 
 import com.example.Nail_studio.client.Client;
+import com.example.Nail_studio.feedback.Feedback;
 import com.example.Nail_studio.options.Options;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -53,6 +54,14 @@ public class Order {
 
 
 
+    @OneToOne(mappedBy = "order",
+                orphanRemoval = true,
+                cascade = {CascadeType.PERSIST, CascadeType.REMOVE, CascadeType.REFRESH, CascadeType.MERGE},
+                fetch = FetchType.EAGER)
+    private Feedback feedback;
+
+
+
     public Order(LocalDateTime createdAt, Boolean approved) {
         this.createdAt = createdAt;
         this.approved = approved;
@@ -71,6 +80,27 @@ public class Order {
         this.options = options;
         options.setOrder(this);
         this.client = client;
+    }
+
+    public Order(LocalDateTime createdAt, Boolean approved, Options options, Client client, Feedback feedback) {
+        this.createdAt = createdAt;
+        this.approved = approved;
+        this.options = options;
+        this.client = client;
+        this.feedback = feedback;
+    }
+    
+    
+    
+    public void addFeedback (Feedback feedback){
+        this.feedback = feedback;
+        feedback.setOrder(this);
+    }
+    
+    public void removeFeedback(Feedback feedback){
+        this.feedback = null;
+        // TODO: 10/24/2022 check maybe do not need remove from feedback are Order 
+        feedback.setOrder(null);
     }
 
     /*@Override

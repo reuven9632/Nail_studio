@@ -110,6 +110,10 @@ public class BranchOfficeConfiguration {
             System.out.println(someTextOfFeedback);
 
 
+            order.addFeedback(someTextOfFeedback);
+            orderRepository.save(order);
+            System.out.println(order);
+
 
 
 

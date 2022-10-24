@@ -1,5 +1,6 @@
 package com.example.Nail_studio.feedback;
 
+import com.example.Nail_studio.order.Order;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -45,6 +46,13 @@ public class Feedback {
     private Boolean hide;
 
 
+    @OneToOne
+    @JoinColumn(name = "order_id",
+                referencedColumnName = "id",
+                foreignKey = @ForeignKey(name = "feedback__order_id_fk"))
+    private Order order;
+
+
     public Feedback(String text, Boolean liked, Integer star, Boolean hide) {
         this.text = text;
         this.liked = liked;
@@ -52,6 +60,13 @@ public class Feedback {
         this.hide = hide;
     }
 
+    public Feedback(String text, Boolean liked, Integer star, Boolean hide, Order order) {
+        this.text = text;
+        this.liked = liked;
+        this.star = star;
+        this.hide = hide;
+        this.order = order;
+    }
 
     @Override
     public String toString() {
