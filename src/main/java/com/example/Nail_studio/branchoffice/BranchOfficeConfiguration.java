@@ -144,6 +144,26 @@ public class BranchOfficeConfiguration {
             Shipment shipment = new Shipment(LocalDateTime.now(), false);
             shipmentRepository.save(shipment);
             System.out.println(shipment);
+
+
+
+
+            /**Check Point*/
+            // TODO: 10/25/2022         create test of Point.class
+
+
+
+
+            /**Check Diary*/
+            // TODO: 10/25/2022         create Diary.class
+            // TODO: 10/25/2022         create test of Diary.class
+
+
+
+
+            /**Check Diary*/
+            // TODO: 10/25/2022         create MailSender.class
+            // TODO: 10/25/2022         create test of MailSender.class
         };
     }
 

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head th:insert="blocks/head :: head"></head>
+<body>
+<div th:insert="blocks/header :: header"></div>
+
+
+<div th:if="${messageBool}" th:text="${message}" class="container alert alert-info">
+
+</div>
+<div class="container mt-5">
+    <h1 class="mt-5">Registration</h1>
+    <form th:action="@{/registration}" method="post">
+        <label> User Name : </label><input type="text" name="username" class="form-control alert alert-info mb-2"/>
+        <label> Password: </label><input type="password" name="password" class="form-control alert alert-info mb-2"/>
+        <label> Email: </label><input type="email" name="email" class="form-control alert alert-info mb-2"/>
+        <button type="submit" class="btn btn-success mb-4">add user</button>
+    </form>
+</div>
+<div th:insert="blocks/footer :: footer"></div>
+<div th:insert="blocks/bootstrapScript :: bootstrapScript"></div>
+</body>
+</html>

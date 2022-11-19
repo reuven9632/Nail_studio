@@ -1,0 +1,644 @@
+@import "vars";
+@import "libs";
+@import "fonts";
+@import "global";
+
+
+.header {
+    position: fixed;
+    top: 18px;
+    right: 0;
+    left: 0;
+    z-index: 100;
+    
+    .logo__img img{
+        height: 51px;
+    }
+
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        min-height: 30px;
+        text-transform: uppercase;
+        line-height: 17px;
+        font-size: 15px;
+        @extend %ubuntu-medium;
+    }
+
+    &__btn {
+        color: #fff;
+        background-color: transparent;
+        padding: 6px 28px;
+        border: 1px solid #fff;
+        border-radius: 3px;
+        margin-right: 8px;
+        text-transform: uppercase;
+        cursor: pointer;
+        transition: all .4s;
+
+        &:hover {
+            color: #000;
+            background-color: #fff;
+        }
+    }
+
+    &__phone {
+        font-size: 16px;
+        line-height: 18px;
+        @extend %ubuntu-bold;
+    }
+}
+
+
+
+.menu {
+    &__btn {
+        display: none;
+    }
+
+    &__list-item {
+        display: inline-block;
+
+        &+.menu__list-item {
+            padding-left: 20px;
+        }
+    }
+
+    &__list-item.active a {
+        text-decoration: underline;
+        text-decoration-color: #fd6804;
+    }
+
+    &__list-phone {
+        display: none;
+    }
+}
+
+.top {
+    background-image: url('../images/bg_1920x1200.jpg');
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: linear-gradient(to bottom, #33ccff 0%, #ff99cc 100%);
+        opacity: 0.4;
+    }
+
+    &__wrapper {
+        display: flex;
+        align-items: flex-end;
+    }
+
+    &__inner {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+        margin-bottom: 15px;
+    }
+
+    &__title {
+        font-size: 96px;
+        line-height: 115px;
+        @extend %sf-semibold;
+        margin-top: 218px;
+        margin: 0 0 20px;
+        // margin-bottom: 25px;
+    }
+
+    &__text {
+        margin: 26px 0 35px;
+        max-width: 324px;
+    }
+
+    &__social-list {
+        background-color: rgba(#000, .07);
+        box-shadow: 0 0 15px 12px rgba(#000, .07);
+    }
+
+    &__social-item {
+        display: inline-block;
+        padding: 0 25px;
+    }
+
+    &__social-link {
+        opacity: 0.5;
+        transition: all .4s;
+
+        &:hover {
+            opacity: 1;
+        }
+    }
+}
+
+.products {
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+        padding-left: 50px;
+    }
+
+    &__title{
+        padding-top: 0;
+    }
+
+    &__text {
+        max-width: 440px;
+
+        p {
+            margin-bottom: 30px;
+        }
+    }
+
+    &__slider-box {
+        position: relative;
+    }
+
+    &__slider-text {
+        width: 285px;
+        position: absolute;
+        text-align: right;
+        font-size: 24px;
+        line-height: 28px;
+        @extend %ubuntu-medium;
+        bottom: 30px;
+        left: -250px;
+        z-index: 5;
+    }
+
+    &__slider {
+        max-width: 560px;
+
+        &::before {
+            content: "";
+            position: absolute;
+            width: 560px;
+            height: 276px;
+            border: 4px solid #fff;
+            top: -15px;
+            right: -17px;
+        }
+    }
+
+    &__slider-img{
+        width: 560px;
+    }
+
+}
+
+.slider-btn {
+    padding: 16px 26px;
+    border: none;
+    background-color: #fff;
+    position: absolute;
+    right: 0;
+    z-index: 5;
+    cursor: pointer;
+    bottom: -48px;
+
+    &:hover {
+        background-color: #B9B8DB;
+    }
+
+    svg {
+        stroke: #1C1C1C;
+    }
+
+    &__left {
+        right: 60px;
+    }
+
+    &.slick-disabled {
+        background-color: #1C1C1C;
+        stroke: #fff;
+
+        svg {
+            stroke: #B9B8DB;
+        }
+    }
+}
+
+
+.benefits {
+    &__items {
+        display: flex;
+        flex-wrap: wrap;
+        padding-left: 25px;
+    }
+
+    &__item {
+        display: flex;
+        margin-bottom: 100px;
+        align-items: flex-end;
+
+        &:nth-child(even) {
+            margin-left: 40px;
+            transform: translateY(25px);
+        }
+
+        &:nth-child(3) {
+            margin-left: 30px;
+        }
+
+        &:nth-child(4) {
+            margin-left: 60px;
+        }
+
+        &:nth-child(1) {
+            position: relative;
+
+            &::before {
+                content: "";
+                position: absolute;
+                height: 45px;
+                width: 245px;
+                top: 31px;
+                right: -56px;
+                background-image: url(../images/benefits__line-1.svg);
+                background-repeat: no-repeat;
+                background-position: 0 0;
+            }
+        }
+
+        &:nth-child(2) {
+            position: relative;
+
+            &::before {
+                content: "";
+                position: absolute;
+                height: 62px;
+                width: 463px;
+                top: 167px;
+                right: 541px;
+                background-image: url(../images/benefits__line-2.svg);
+                background-repeat: no-repeat;
+                background-position: 0 0;
+            }
+        }
+
+        &:nth-child(3) {
+            position: relative;
+
+            &::before {
+                content: "";
+                position: absolute;
+                width: 255px;
+                height: 40px;
+                top: 47px;
+                right: -62px;
+                background-image: url(../images/benefits__line-3.svg);
+                background-repeat: no-repeat;
+                background-position: 0 0;
+
+            }
+        }
+    }
+
+
+    &__num {
+        margin-right: 10px;
+        font-size: 36px;
+        line-height: 41px;
+        @extend %ubuntu-bold;
+    }
+
+    &__img {
+        position: relative;
+        margin-right: 32px;
+
+        &::before {
+            content: "";
+            border: 2px solid #fff;
+            position: absolute;
+            top: -12px;
+            right: -12px;
+            width: 193px;
+            height: 128px;
+            z-index: -1;
+        }
+    }
+
+    &__info {
+        width: 300px;
+    }
+
+    &__info-title {
+        width: 123px;
+        font-size: 21px;
+        line-height: 24px;
+        @extend %ubuntu-bold;
+        margin-bottom: 10px;
+    }
+
+    &__info-text {
+        font-size: 15px;
+        line-height: 18px;
+        // @extend %ubuntu-light;
+    }
+}
+
+.specification {
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-left: 25px;
+    }
+
+    &__box {
+        width: 280px;
+        position: relative;
+        margin-top: 10px;
+
+        &::before {
+            content: "";
+            position: absolute;
+            background-repeat: no-repeat;
+            background-position: 0 0;
+            background-size: contain;
+        }
+    }
+
+    &__box-2 {
+        margin-top: 140px;
+    }
+
+    &__box-4 {
+        margin-top: 160px;
+    }
+
+    &__box-1::before {
+        background-image: url(../images/specification__pointer-1.svg);
+        width: 229px;
+        height: 114px;
+        top: 24px;
+        right: -188px;
+    }
+
+    &__box-2::before {
+        background-image: url(../images/specification__pointer-2.svg);
+        width: 346px;
+        height: 81px;
+        top: -52px;
+        right: -323px;
+    }
+
+    &__box-3::before {
+        background-image: url(../images/specification__pointer-3.svg);
+        width: 258px;
+        height: 103px;
+        top: 17px;
+        left: -299px;
+    }
+
+    &__box-4::before {
+        background-image: url(../images/specification__pointer-4.svg);
+        width: 224px;
+        height: 89px;
+        top: -58px;
+        left: -133px;
+    }
+
+
+    &__box-title {
+        font-size: 21px;
+        line-height: 28px;
+        @extend %ubuntu-bold;
+        margin-bottom: 10px;
+
+    }
+
+    &__box-text {
+        font-size: 15px;
+        line-height: 18px;
+        // @extend %ubuntu-light;
+    }
+}
+
+.faq {
+    &__items {
+        width: 757px;
+        margin-bottom: 15px;
+        position: relative;
+
+        &::before {
+            content: "";
+            position: absolute;
+            // top: 273px;
+            // right: -324px;
+            // width: 319px;
+            // height: 125px;
+            top: 239px;
+            right: -441px;
+            width: 660px;
+            height: 190px;
+            z-index: -1;
+            background-image: url(../images/mavic.png);
+            background-repeat: no-repeat;
+            background-position: 0 0;
+        }
+    }
+
+    &__item {
+        max-width: 690px;
+        background: rgba(0, 0, 0, 0.3);
+    }
+
+    &__item-title {
+        font-size: 21px;
+        line-height: 28px;
+        @extend %ubuntu-medium;
+        color: rgba(#fff, 0.8);
+        padding: 20px 10px 20px 40px;
+        margin-bottom: 4px;
+        position: relative;
+        cursor: pointer;
+
+        &::after {
+            content: url('../images/faq__arrow-down.svg');
+            background-color: #fff;
+            background-repeat: no-repeat;
+            background-position: 0 0;
+            position: absolute;
+            right: -72px;
+            top: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 72px;
+            height: 67px;
+
+        }
+    }
+
+    &__item-text {
+        padding: 0px 5px 75px 50px;
+        font-size: 15px;
+        line-height: 22px;
+        // @extend %ubuntu-light;
+        margin: 0 0 4px;
+
+        display: none;
+    }
+
+    &__item.faq__item--active {
+        .faq__item-title::after {
+            transform: rotate(180deg);
+        }
+
+        .faq__item-text {
+            display: block;
+        }
+    }
+}
+
+.contacts {
+
+    &__inner {
+        display: flex;
+        margin-left: 25px;
+    }
+
+    &__info {
+        width: 240px;
+        margin-right: 60px;
+    }
+
+    &__info-box {
+        margin-bottom: 30px;
+    }
+
+    &__info-title,
+    &__form-title {
+        font-size: 21px;
+        line-height: 24px;
+        @extend %ubuntu-bold;
+        margin: 0 0 13px;
+    }
+
+
+    &__info-phone,
+    &__info-email,
+    &__form-text {
+        font-size: 15px;
+        line-height: 18px;
+        // @extend %ubuntu-light;
+    }
+
+    &__info-email:hover {
+        text-decoration: underline;
+    }
+
+    &__form {
+        width: 570px;
+        margin-right: 106px;
+    }
+
+    &__form-text {
+        margin: 0 0 12px;
+    }
+
+    &__form-line {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__form-input,
+    &__form-textarea {
+        background: rgba(0, 0, 0, 0.5);
+        border: none;
+        font-size: 13px;
+        line-height: 15px;
+        @extend %ubuntu-regular;
+        padding: 15px;
+        color: #fff;
+
+        &::placeholder {
+            color: rgba(#fff, .4);
+        }
+    }
+
+    &__form-input {
+        width: 49%;
+        margin-bottom: 10px;
+    }
+
+    &__form-textarea {
+        margin-bottom: 20px;
+        width: 570px;
+        height: 144px;
+        resize: none;
+    }
+
+    &__form-btn {
+        font-size: 14px;
+        line-height: 16px;
+        letter-spacing: 0.03em;
+        @extend %ubuntu-bold;
+        width: 120px;
+        height: 34px;
+        background-color: transparent;
+        color: #fff;
+        border: 1px solid #fff;
+        border-radius: 2px;
+        transition: all .3s;
+        text-transform: uppercase;
+        cursor: pointer;
+
+        &:hover {
+            background-color: #fff;
+            color: #000;
+        }
+    }
+
+    &__social-list {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    &__social-item {
+        margin: 14px 0;
+        opacity: 0.5;
+
+        &:hover {
+            opacity: 1;
+        }
+    }
+}
+
+.footer-arrow-up {
+    transform: rotate(180deg);
+}
+
+
+.footer {
+    position: absolute;
+    bottom: 52px;
+    left: 0;
+    right: 0;
+
+    &__copy {
+        text-align: right;
+        font-size: 13px;
+        line-height: 15px;
+        color: rgba(#fff, 0.64);
+    }
+
+}
+
+.fp-watermark {
+    display: none;
+}
+
+
+
+
+
+
+@import "media";
