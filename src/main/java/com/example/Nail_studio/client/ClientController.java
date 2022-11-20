@@ -14,6 +14,7 @@ public class ClientController {
 
     @GetMapping(path = "/registration")
     public String registration(Model model){
+        model.addAttribute("client", new Client());//to delete!!!
         return "registration";
     }
 
