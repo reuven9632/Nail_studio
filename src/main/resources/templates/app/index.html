@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 
 <head>
   <meta charset="UTF-8">
@@ -403,14 +403,14 @@
             </div>
 
             <div class="contacts__form">
-              <form action="">
+              <form th:action="@{/form_to_email}" method="post">
                 <h4 class="contacts__form-title">more questions?</h4>
                 <p class="contacts__form-text">Мы обязательно свяжемся с вами в течение двух рабочих дней</p>
                 <div class="contacts__form-line">
-                  <input class="contacts__form-input" placeholder="Ваше имя" type="text">
-                  <input class="contacts__form-input" placeholder="Ваше e-mail" type="email">
+                  <input class="contacts__form-input" name="name"  placeholder="Ваше имя" type="text">
+                  <input class="contacts__form-input" name="email" placeholder="Ваше e-mail" type="email">
                 </div>
-                <textarea class="contacts__form-textarea" placeholder="Что вас интересует?"></textarea>
+                <textarea class="contacts__form-textarea" name="textToEmail" placeholder="Что вас интересует?"></textarea>
                 <button class="contacts__form-btn" type="submit">SEND</button>
               </form>
             </div>
