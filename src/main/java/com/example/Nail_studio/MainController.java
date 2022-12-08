@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 //This controller just for test
 //@RequestMapping(path = "api/v1/main")//do not work css -> somebody blocs url to load css
 //@RestController//return string whats was write the same word -> not .html    on folder ../templates/..  !!
-@AllArgsConstructor
+//@AllArgsConstructor
 @Controller
 public class MainController {
 

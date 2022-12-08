@@ -1,3 +1,4 @@
+/*
 package com.example.Nail_studio.formtoemail;
 
 import com.example.Nail_studio.mail.MailSender;
@@ -27,3 +28,4 @@ public class FormServiceImp implements FormService{
         return "";
     }
 }
+*/

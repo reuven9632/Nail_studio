@@ -1,3 +1,4 @@
+/*
 package com.example.Nail_studio.formtoemail;
 
 import lombok.AllArgsConstructor;
@@ -18,3 +19,4 @@ public class FormController {
         return "app/index";
     }
 }
+*/
