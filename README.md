@@ -72,7 +72,7 @@ I'm a Java developer...
 
 ## Logo
 
-![Logo](https://github.com/reuven9632/Nail_studio/blob/main/src/main/resources/static/images/readme/logo.PNG)
+![Logo](https://github.com/reuven9632/Nail_studio/blob/main/src/main/resources/static/images/readme/logo.png)
 
 
 ## Support
