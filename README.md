@@ -18,7 +18,7 @@ This project is for nail service masters, for dialogue and comfortable managemen
 | Parameter | Type     | Description                |
 | :-------- | :------- | :------------------------- |
 | `id` | `string` | **Required**. id of specialist
-|           |           |Responce view with Model wich takes Specialist.class |
+|           |           |Representing a response with a model that accepts a Specialist.class |
 
 #### Get all Specialists
 
@@ -28,7 +28,7 @@ This project is for nail service masters, for dialogue and comfortable managemen
 
 | Parameter | Type     | Description                       |
 | :-------- | :------- | :-------------------------------- |
-| `-`      | `string` | **Required**. Responce view with Model wich takes List<Specialist> |
+| `-`      | `string` | **Required**. Response view with Model that accepts a List<Specialist> |
 
 
 
