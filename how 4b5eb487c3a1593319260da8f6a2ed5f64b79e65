@@ -1,0 +1,83 @@
+[33mcommit 4b5eb487c3a1593319260da8f6a2ed5f64b79e65[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: reuven9632 <reuven9632@gmail.com>
+Date:   Fri Dec 9 20:31:23 2022 +0200
+
+    changes table of response on readme.md
+
+[33mcommit 8c9faac2cac3c9eb0a21fbe3f6f8c0673ad74633[m
+Author: reuven9632 <reuven9632@gmail.com>
+Date:   Fri Dec 9 20:27:25 2022 +0200
+
+    changes on readme.md
+
+[33mcommit 6b9bd658c07a26d502cf7d9cf310138162500d6b[m[33m ([m[1;32mBusiness_logic[m[33m)[m
+Author: reuven9632 <reuven9632@gmail.com>
+Date:   Fri Dec 9 19:24:32 2022 +0200
+
+    change reference on readme.md to LinkedIn
+
+[33mcommit c229d2847f24e9f28d220aef4330a7773c01a71d[m[33m ([m[1;31morigin/Adding_frontend[m[33m)[m
+Author: reuven9632 <reuven9632@gmail.com>
+Date:   Fri Dec 9 10:28:47 2022 +0200
+
+    marge two branches
+
+[33mcommit e25c80e472f404f8b17bc5ef0102142a45dceca7[m
+Author: reuven9632 <reuven9632@gmail.com>
+Date:   Thu Dec 8 23:22:00 2022 +0200
+
+    debug of frontend reference, mail sender is commented out
+
+[33mcommit 9a3fac4a08a4ced4a2b5b1b9e47acc2844b7c47c[m
+Author: reuven9632 <reuven9632@gmail.com>
+Date:   Mon Nov 28 23:40:28 2022 +0200
+
+    mailsender . ..
+
+[33mcommit b12a10fcfe155aba09df261779c0cacae761bc73[m
+Author: reuven9632 <reuven9632@gmail.com>
+Date:   Sun Nov 20 23:14:54 2022 +0200
+
+    frontend 1.0
+
+[33mcommit 6436509ae937d7d2ca9f0299a322b8adec0386bc[m
+Author: reuven9632 <reuven9632@gmail.com>
+Date:   Sun Nov 20 23:03:09 2022 +0200
+
+    business logic files 1.0
+
+[33mcommit 175520416da88dada7451913e86106f4ce04c3b8[m
+Author: reuven9632 <reuven9632@gmail.com>
+Date:   Sat Nov 19 22:32:54 2022 +0200
+
+    add frontend and some business logic files
+
+[33mcommit cea481af3650de1d6a82fe23cc3e699d4f6ae402[m
+Author: reuven9632 <reuven9632@gmail.com>
+Date:   Tue Oct 25 22:55:03 2022 +0300
+
+    Feedback connection to Order
+
+[33mcommit 1ce09c77c0491d5829e22816b13ae50106665f0c[m
+Author: reuven9632 <reuven9632@gmail.com>
+Date:   Mon Oct 24 23:23:00 2022 +0300
+
+    Concatinated Feedback and Order
+
+[33mcommit 1c1f18f18e2639743c13b878e38ab7c4a04879fb[m
+Author: reuven9632 <reuven9632@gmail.com>
+Date:   Sat Oct 22 22:32:29 2022 +0300
+
+    betta connection to client @OneToMany
+
+[33mcommit 11f0c57e63f847fc8934f32aa0fced1f6b9c8005[m
+Author: reuven9632 <reuven9632@gmail.com>
+Date:   Fri Oct 21 15:51:50 2022 +0300
+
+    main project of nails-studio
+
+[33mcommit f9354c22e5ed4f4e3625522179864dec8968fa31[m
+Author: reuven9632 <reuven9632@gmail.com>
+Date:   Fri Oct 21 15:49:05 2022 +0300
+
+    first commit
