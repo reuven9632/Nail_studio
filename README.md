@@ -1,8 +1,66 @@
-"# Nail_studio" 
 
-<h3 align="center">This project is for nail service masters, for dialogue and comfortable management of their work.</h3>
+# Nail-studio
 
-- 🔭 I’m currently working on **Nail-studio**
+This project is for nail service masters, for dialogue and comfortable management of their work.
+## Screenshots
+
+![App Screenshot](https://github.com/reuven9632/Nail_studio/blob/main/src/main/resources/static/images/Nais_studio.PNG)
+
+
+## API Reference
+
+#### Get Specialist
+
+```http
+  GET api/v1/specialist/{id}
+```
+
+| Parameter | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `id` | `string` | **Required**. id of specialist
+|           |           |Responce view with Model wich takes Specialist.class |
+
+#### Get all Specialists
+
+```http
+  GET api/v1/specialists
+```
+
+| Parameter | Type     | Description                       |
+| :-------- | :------- | :-------------------------------- |
+| `-`      | `string` | **Required**. Responce view with Model wich takes List<Specialist> |
+
+
+
+## Authors
+
+- [@reuven9632](https://github.com/reuven9632)
+
+
+## Features
+
+- Light/dark mode toggle
+- Live previews
+- Fullscreen mode
+- Cross platform
+
+
+## Feedback
+
+If you have any feedback, please reach out to us at reuven1856@gmail.com
+
+
+## 🚀 About Me
+I'm a Java developer...
+
+
+## 🔗 Links
+[![portfolio](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://github.com/reuven9632/Nail_studio)
+[![linkedin](https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/reuven-s/)
+
+
+## 🛠 Skills
+Java, Spring boot, Spring Security, HTML, CSS...
 
 <h3 align="left">Connect with me:</h3>
 <p align="left">
@@ -12,6 +70,28 @@
 <h3 align="left">Languages and Tools:</h3>
 <p align="left"> <a href="https://www.w3schools.com/css/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" alt="css3" width="40" height="40"/> </a> <a href="https://www.figma.com/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/figma/figma-icon.svg" alt="figma" width="40" height="40"/> </a> <a href="https://git-scm.com/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="git" width="40" height="40"/> </a> <a href="https://gulpjs.com" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/gulp/gulp-plain.svg" alt="gulp" width="40" height="40"/> </a> <a href="https://www.w3.org/html/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="html5" width="40" height="40"/> </a> <a href="https://www.postgresql.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/postgresql/postgresql-original-wordmark.svg" alt="postgresql" width="40" height="40"/> </a> <a href="https://postman.com" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/getpostman/getpostman-icon.svg" alt="postman" width="40" height="40"/> </a> <a href="https://sass-lang.com" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/sass/sass-original.svg" alt="sass" width="40" height="40"/> </a> <a href="https://spring.io/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/springio/springio-icon.svg" alt="spring" width="40" height="40"/> </a> </p>
 
+
+
+![Logo](https://github.com/reuven9632/Nail_studio/blob/main/src/main/resources/static/images/logo2.PNG)
+
+
+## Support
+
+For support, email reuven1856@gmail.com or join our Slack channel.
+
+
+## Tech Stack
+
+**Client:** thymeleaf, css, sass, html, gulp
+
+**Server:** Java Spring boot, PostgresQL, data jpa, lombok, guava
+
+
+## Used By
+
+This project is used by the following companies:
+
+- Alona-Nails
 
 
 
