@@ -1,0 +1,116 @@
+ls			show files on this folder
+
+cd			move to directory   example: cd template
+
+vi <fileName>...	goes inside the file for editing	Example: vi index.html(do not work on terminal of InteliJI)
+			//press I for insert code    and then after making changes -> Esc -> :wq -> Enter
+
+cat <fileName>...	show file cod		   		Example: cat index.html(do not work on terminal of InteliJI)
+
+
+--------------------------------------------------------------------------------------------
+#MKDIR, TOUCH, INIT, RM
+
+
+
+kmdir <nameFile>...	create folder on this folder	example: mkdir test
+
+touch <nameFile>...	create file on this folder	example: touch index.html
+
+git init .		init .git file on current directory(. means on current directory)
+
+rm -rf .git		remove .git from this folder???
+
+
+--------------------------------------------------------------------------------------------
+#ADD
+##STATUS, CACHED, RESTORE
+
+
+git status		shows the current state of your git directory and staging area
+
+git add <fileName>...	add all file, what was not added yet to stageing area, from this folder
+			example:	git add index.html
+
+git add . 		add all files from current directory to stageing area, from this folder
+
+git add -A		add all files from current directory to stageing area, from  all folders
+
+git rm --cached <nameOfFile>...		remove from stage area added files, from this folder
+					example: git rm --cached index.html
+
+git rm -r -cached .			remove from stage area all added files, from this folder
+
+git restore <nameOfFile>...		restore of file
+					example: git restore Client.java
+
+
+
+--------------------------------------------------------------------------------------------
+#COMMIT 
+##LOG, DIFF, AMEND
+
+
+git commit -m "Description of commit"		commit all changes for files on stageing area
+						// -m   for message/description
+
+git log						log commits information
+
+git log --oneline				log commits information on enother format
+
+git show <HashOfCommit>				shows diff of commit
+						example: git show 4b5eb487c3a1593319260da8f6a2ed5f64b79e65
+						//press Q for exit from menu
+
+git diff					shows diff of code on files
+
+git commit --amend -m "Description of commit"	rename/amend description of last commit
+
+
+
+--------------------------------------------------------------------------------------------
+#BRANCH
+
+git branch			response name of branch on local machine
+
+git branch -r			response name of branch on remote(-r  ->  remote)
+
+git branch -a			response name of branch on local machine and remote
+
+git btanch <nameNewBranch>	create new branch
+				example: git branch feature-a
+
+git checkout -b <nameNewBranch>	create new branch and go checkout on there, that's means
+				if I was on main Branch and write
+				git checkout -b frontEndBranch
+				I was create and checkout simultaneously
+
+git checkout <nameBranch>	change branch from branchNow  to newBranch
+				example: if I was on main and write   git checkout feture-a   ->
+				I was change from main to feature-a
+
+git checkout -			change to previous branch
+
+git branch -M main		gives name to main branch
+
+git branch -d <nameBranchToDelete>	to delete branch	example: git branch -d branchNameToDelete
+
+
+
+
+--------------------------------------------------------------------------------------------
+#REMOTE(push repository to github)
+
+git remote add origin git@github.com:reuven1856/Nail-studio.git		???
+
+git push -u origin main				push changes to main branch on github
+
+
+
+--------------------------------------------------------------------------------------------
+#PULL
+
+git pull		take changes from remote server(github)
+--------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------
