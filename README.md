@@ -4,7 +4,7 @@
 This project is for nail service masters, for dialogue and comfortable management of their work.
 ## Screenshots
 
-![App Screenshot](https://github.com/reuven9632/Nail_studio/blob/main/src/main/resources/static/images/readme/Nais_studio.PNG)
+![App PostgresQL](https://github.com/reuven9632/Nail_studio/blob/main/src/main/resources/static/images/readme/Nais_studio.PNG)
 
 
 ## API Reference
