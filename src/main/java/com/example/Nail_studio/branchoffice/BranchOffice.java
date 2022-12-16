@@ -2,6 +2,7 @@ package com.example.Nail_studio.branchoffice;
 
 import com.example.Nail_studio.options.Options;
 import com.example.Nail_studio.specialist.Specialist;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -41,19 +42,12 @@ public class BranchOffice {
             columnDefinition = "TEXT")
     private String address;
 
-
+    @JsonIgnore
     @OneToMany(mappedBy = "branchOffice",
                 cascade = /*CascadeType.ALL*/{CascadeType.PERSIST, CascadeType.REMOVE, CascadeType.MERGE},
                 orphanRemoval = true,
                 fetch = FetchType.LAZY)
     private List<Specialist> specialists = new ArrayList<>();
-
-
-    @OneToMany(mappedBy = "branchOffice",
-                cascade = {CascadeType.PERSIST, CascadeType.REMOVE, CascadeType.REFRESH},
-                orphanRemoval = true,
-                fetch = FetchType.LAZY)
-    private List<Options> options = new ArrayList<>();
 
 
 
@@ -75,18 +69,6 @@ public class BranchOffice {
             specialist.setBranchOffice(null);
         }
     }
-
-
-    public void addOption(Options option){
-        this.options.add(option);
-        option.setBranchOffice(this);
-    }
-
-    public void removeOption(Options option){
-        this.options.remove(option);
-        option.setBranchOffice(null);
-    }
-
 
 
     @Override
