@@ -65,7 +65,7 @@ public class BranchOfficeConfiguration {
 
 
             /** Check Options/Order  */
-            Options option = new Options("some text of options");
+            /*Options option = new Options("some text of options");
             optionsRepository.save(option);
             Options option2 = new Options("some text of options 2 ", alonaNails);
             optionsRepository.save(option2);
@@ -75,13 +75,13 @@ public class BranchOfficeConfiguration {
             Order order = new Order(LocalDateTime.now(), false, option);
             orderRepository.save(order);
             Order order2 = new Order(LocalDateTime.now(), false, option2);
-            orderRepository.save(order2);
+            orderRepository.save(order2);*/
 
 
 
 
             /** Check Client/Order */
-            Client emilSamaev = new Client("Emil", "Samaev", "EmilSamaev@gmail.com", "054-1234568", Role.CLIENT);
+            /*Client emilSamaev = new Client("Emil", "Samaev", "EmilSamaev@gmail.com", "054-1234568", Role.CLIENT);
             clientRepository.save(emilSamaev);
             System.out.println(emilSamaev);
 
@@ -102,25 +102,25 @@ public class BranchOfficeConfiguration {
 
             System.out.println(sara);
             System.out.println(order);
-            System.out.println(option);
+            System.out.println(option);*/
 
 
 
 
             /** Check Feedback/Order */
-            Feedback someTextOfFeedback = new Feedback("some text of feedback", false, 4, false);
+            /*Feedback someTextOfFeedback = new Feedback("some text of feedback", false, 4, false);
             feedbackRepository.save(someTextOfFeedback);
             System.out.println(someTextOfFeedback);
 
             order.addFeedback(someTextOfFeedback);
             orderRepository.save(order);
-            System.out.println(order);
+            System.out.println(order);*/
 
 
 
 
             /** Check Options/BranchOffice */
-            Options option1 = new Options("some text of options", new Order(LocalDateTime.now(), false));
+            /*Options option1 = new Options("some text of options", new Order(LocalDateTime.now(), false));
             optionsRepository.save(option1);
 
 
@@ -128,22 +128,22 @@ public class BranchOfficeConfiguration {
             branchOfficeRepository.save(alonaNails);
             optionsRepository.save(option1);
 
-            System.out.println(option);
+            System.out.println(option);*/
 
 
 
 
             /** Check ValidatorResult */
-            ValidatorResult result = ClientValidator.allValidations().apply(emilSamaev);
+            /*ValidatorResult result = ClientValidator.allValidations().apply(emilSamaev);
             System.out.println("result of validating " + emilSamaev.getFirstName() + " : " + result);
 
 
 
 
-            /**Check shipment*/
+            *//**Check shipment*//*
             Shipment shipment = new Shipment(LocalDateTime.now(), false);
             shipmentRepository.save(shipment);
-            System.out.println(shipment);
+            System.out.println(shipment);*/
 
 
 

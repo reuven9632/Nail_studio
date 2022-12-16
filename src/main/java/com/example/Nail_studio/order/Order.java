@@ -3,6 +3,7 @@ package com.example.Nail_studio.order;
 import com.example.Nail_studio.client.Client;
 import com.example.Nail_studio.feedback.Feedback;
 import com.example.Nail_studio.options.Options;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -53,7 +54,7 @@ public class Order {
     private Client client;
 
 
-
+    @JsonIgnore
     @OneToOne(mappedBy = "order",
                 orphanRemoval = true,
                 cascade = {CascadeType.PERSIST, CascadeType.REMOVE, CascadeType.REFRESH, CascadeType.MERGE},
@@ -102,17 +103,6 @@ public class Order {
         // TODO: 10/24/2022 check maybe do not need remove from feedback are Order 
         feedback.setOrder(null);
     }
-
-    /*@Override
-    public String toString() {
-        return "Order{" +
-                "id=" + id +
-                ", createdAt=" + createdAt +
-                ", approved=" + approved +
-                ", options=" + options +
-                ", client=" + client +
-                '}';
-    }*/
 
     @Override
     public String toString() {

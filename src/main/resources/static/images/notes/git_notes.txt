@@ -13,7 +13,7 @@ cat <fileName>...	show file cod		   		Example: cat index.html(do not work on ter
 
 
 
-kmdir <nameFile>...	create folder on this folder	example: mkdir test
+mkdir <nameFile>...	create folder on this folder	example: mkdir test
 
 touch <nameFile>...	create file on this folder	example: touch index.html
 
@@ -77,7 +77,7 @@ git branch -r			response name of branch on remote(-r  ->  remote)
 
 git branch -a			response name of branch on local machine and remote
 
-git btanch <nameNewBranch>	create new branch
+git branch <nameNewBranch>	create new branch
 				example: git branch feature-a
 
 git checkout -b <nameNewBranch>	create new branch and go checkout on there, that's means
