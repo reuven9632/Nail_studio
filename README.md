@@ -4,7 +4,7 @@
 This project is for nail service masters, for dialogue and comfortable management of their work.
 ## database structure
 
-![App PostgresQL](https://github.com/reuven9632/Nail_studio/blob/main/src/main/resources/static/images/readme/Nais_studio.PNG)
+![Nais_studio](https://user-images.githubusercontent.com/66059644/208201545-3d3c08d5-2a67-4e87-9a97-af1891535c4a.PNG)
 
 
 ## API Reference
