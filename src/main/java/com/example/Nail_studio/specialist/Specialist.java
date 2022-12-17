@@ -40,11 +40,13 @@ public class Specialist {
 
 
     @Column(name = "experience",
-            nullable = false)
+            nullable = true)
     private Integer experience;
 
 
     @Enumerated(EnumType.STRING)
+    @Column(name = "role",
+            nullable = false)
     private Role role;
 
 

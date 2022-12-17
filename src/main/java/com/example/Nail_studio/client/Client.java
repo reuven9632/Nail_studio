@@ -51,7 +51,7 @@ public class Client {
             nullable = false)
     private String phone;
 
-
+    @Enumerated(EnumType.STRING)
     @Column(name = "role",
             nullable = false)
     private Role role;

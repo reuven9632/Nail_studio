@@ -103,7 +103,10 @@ git branch -d <nameBranchToDelete>	to delete branch	example: git branch -d branc
 
 git remote add origin git@github.com:reuven1856/Nail-studio.git		???
 
-git push -u origin main				push changes to main branch on github
+git push -u origin main				                push changes to main branch on github
+
+git push --set-upstream origin <nameNewBranch>      to create new branch on local machine and push to remote
+                                                    example:     git push --set-upstream origin registration
 
 
 
