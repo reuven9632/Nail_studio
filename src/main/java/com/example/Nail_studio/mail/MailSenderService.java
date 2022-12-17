@@ -1,4 +1,3 @@
-/*
 package com.example.Nail_studio.mail;
 
 import lombok.AllArgsConstructor;
@@ -44,4 +43,4 @@ public class MailSenderService implements MailSender{
         }
     }
 }
-*/
+

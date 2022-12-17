@@ -56,6 +56,12 @@ public class Client {
             nullable = false)
     private Role role;
 
+    @Column(name = "activation_code",
+            nullable = true,
+            columnDefinition = "TEXT")
+    private String activationCode;
+
+    private Boolean active;
 
     @OneToMany(mappedBy = "client",
             cascade = CascadeType.ALL/*{CascadeType.PERSIST, CascadeType.REMOVE, CascadeType.REFRESH}*/,
@@ -84,6 +90,14 @@ public class Client {
             this.order.remove(order);
             order.setClient(null);
         }
+    }
+
+    public Boolean isActive(Boolean active){
+        return active;
+    }
+
+    public void setActive(Boolean active) {
+        this.active = active;
     }
 
     @Override

@@ -1,4 +1,3 @@
-/*
 package com.example.Nail_studio.mail;
 
 import lombok.Getter;
@@ -19,4 +18,3 @@ public class MailInfo {
     private String protocol;
     private String debug;
 }
-*/
