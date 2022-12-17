@@ -7,6 +7,11 @@ This project is for nail service masters, for dialogue and comfortable managemen
 ![Nais_studio](https://user-images.githubusercontent.com/66059644/208201545-3d3c08d5-2a67-4e87-9a97-af1891535c4a.PNG)
 
 
+##Registration diagram
+
+![registration PNG](https://user-images.githubusercontent.com/66059644/208255676-67a7a511-215a-4bd0-b506-1fcdbdacfc02.jpg)
+
+
 ## API Reference
 
 #### Get Specialist
