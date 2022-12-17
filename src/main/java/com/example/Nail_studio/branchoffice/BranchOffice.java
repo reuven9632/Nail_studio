@@ -1,6 +1,5 @@
 package com.example.Nail_studio.branchoffice;
 
-import com.example.Nail_studio.options.Options;
 import com.example.Nail_studio.specialist.Specialist;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.EqualsAndHashCode;
@@ -42,7 +41,7 @@ public class BranchOffice {
             columnDefinition = "TEXT")
     private String address;
 
-    @JsonIgnore
+    @JsonIgnore//else I have stake overflow exception
     @OneToMany(mappedBy = "branchOffice",
                 cascade = /*CascadeType.ALL*/{CascadeType.PERSIST, CascadeType.REMOVE, CascadeType.MERGE},
                 orphanRemoval = true,
