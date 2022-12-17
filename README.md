@@ -9,7 +9,7 @@ This project is for nail service masters, for dialogue and comfortable managemen
 
 ## Registration diagram
 
-![registration PNG](https://user-images.githubusercontent.com/66059644/208255676-67a7a511-215a-4bd0-b506-1fcdbdacfc02.jpg)
+![registration PNG](https://user-images.githubusercontent.com/66059644/208266784-47e33811-8671-43fe-a12c-535dfba44891.jpg)
 
 
 ## API Reference
