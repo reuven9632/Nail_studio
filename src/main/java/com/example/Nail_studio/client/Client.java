@@ -41,6 +41,10 @@ public class Client {
             columnDefinition = "TEXT")
     private String lastName;
 
+    @Column(name = "password",
+            nullable = false,
+            columnDefinition = "TEXT")
+    private String password;
 
     @Column(name = "email",
             nullable = false)
@@ -53,15 +57,17 @@ public class Client {
 
     @Enumerated(EnumType.STRING)
     @Column(name = "role",
-            nullable = false)
+            nullable = true)
     private Role role;
+
+    @Column(name = "active",
+            nullable = true)
+    private Boolean active;
 
     @Column(name = "activation_code",
             nullable = true,
             columnDefinition = "TEXT")
     private String activationCode;
-
-    private Boolean active;
 
     @OneToMany(mappedBy = "client",
             cascade = CascadeType.ALL/*{CascadeType.PERSIST, CascadeType.REMOVE, CascadeType.REFRESH}*/,
@@ -78,6 +84,16 @@ public class Client {
         this.role = role;
     }
 
+    public Client(String firstName, String lastName, String password, String email, String phone, Role role, String activationCode, Boolean active) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.password = password;
+        this.email = email;
+        this.phone = phone;
+        this.role = role;
+        this.activationCode = activationCode;
+        this.active = active;
+    }
 
     //todo check method addOrder    and    removeOrder
     public void addOrder(Order order) {
@@ -112,17 +128,4 @@ public class Client {
                 ", order=" + order +
                 '}';
     }
-
-    /*@Override
-    public String toString() {
-        return "Client{" +
-                "id=" + id +
-                ", firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", email='" + email + '\'' +
-                ", phone='" + phone + '\'' +
-                ", role=" + role +
-                '}';
-    }*/
-
 }

@@ -1,11 +1,14 @@
 package com.example.Nail_studio.registration;
 
+import ch.qos.logback.classic.spi.IThrowableProxy;
 import com.example.Nail_studio.client.Client;
 import com.example.Nail_studio.client.ClientRepository;
 import com.example.Nail_studio.mail.MailSenderService;
 import com.example.Nail_studio.role.Role;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.ui.Model;
+
 import java.util.UUID;
 
 @AllArgsConstructor
@@ -25,8 +28,7 @@ public class RegistrationClientService {
      * @version  1.0
      */
     public boolean addClient(Client client) {
-        Client clientFromDb = clientRepository.findByEmail(client.getEmail());
-        if (clientFromDb != null)
+        if (clientRepository.findByEmail(client.getEmail()) != null)
             return false;
 
         client.setActive(false);
@@ -60,4 +62,6 @@ public class RegistrationClientService {
         clientRepository.save(client);
         return true;
     }
+
+
 }
