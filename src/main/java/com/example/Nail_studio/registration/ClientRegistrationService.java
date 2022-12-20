@@ -1,22 +1,21 @@
 package com.example.Nail_studio.registration;
 
-import ch.qos.logback.classic.spi.IThrowableProxy;
 import com.example.Nail_studio.client.Client;
 import com.example.Nail_studio.client.ClientRepository;
 import com.example.Nail_studio.mail.MailSenderService;
 import com.example.Nail_studio.role.Role;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
-import org.springframework.ui.Model;
 
 import java.util.UUID;
 
 @AllArgsConstructor
 @Service
-public class RegistrationClientService {
+public class ClientRegistrationService {
 
     private ClientRepository clientRepository;
     private MailSenderService mailSenderService;
+
 
 
     /**
@@ -37,9 +36,9 @@ public class RegistrationClientService {
         clientRepository.save(client);
 
         String message = String.format("Hello %s  \n" +
-                "go to link: http://localhost:8081/activate/%s",
-                client.getFirstName(),
-                client.getActivationCode());
+                                        "go to link: http://localhost:8081/activate/%s",
+                                        client.getFirstName(),
+                                        client.getActivationCode());
         mailSenderService.send(client.getEmail(), "Activation code", message);
         return true;
     }
@@ -51,7 +50,7 @@ public class RegistrationClientService {
      *
      * @version  1.0
      */
-    public boolean activateClient(String activationCode) {
+    public boolean activation(String activationCode) {
         Client client = clientRepository.findByActivationCode(activationCode);
 
         if (client == null)
@@ -62,6 +61,4 @@ public class RegistrationClientService {
         clientRepository.save(client);
         return true;
     }
-
-
 }

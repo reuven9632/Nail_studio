@@ -36,10 +36,13 @@ public class Shipment {
     private Boolean completed;
 
 
+
     public Shipment(LocalDateTime shipmentDate, Boolean completed) {
         this.shipmentDate = shipmentDate;
         this.completed = completed;
     }
+
+
 
     @Override
     public String toString() {

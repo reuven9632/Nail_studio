@@ -1,6 +1,5 @@
 package com.example.Nail_studio.options;
 
-import com.example.Nail_studio.branchoffice.BranchOffice;
 import com.example.Nail_studio.order.Order;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -16,7 +15,6 @@ import javax.persistence.*;
 @Entity(name = "Options")
 @Table(name = "options")
 public class Options {
-
 
     @Id
     @SequenceGenerator(name = "options_id_sequence",
@@ -34,19 +32,20 @@ public class Options {
             columnDefinition = "TEXT")
     private String text;
 
-    /**Chek why default injection das is not works*/
+
+    // TODO: 12/20/2022      Chek why default injection das is not works
     @Column(name = "builded_nails",
             columnDefinition = "BOOLEAN DEFAULT FALSE")
     private Boolean buildedNails;
 
 
-    /**Chek why default injection das not works*/
+    // TODO: 12/20/2022      Chek why default injection das not works
     @Column(name = "one_color",
             columnDefinition = "BOOLEAN DEFAULT FALSE")
     private Boolean oneColor;
 
 
-    /**Chek why default injection das is not works*/
+    // TODO: 12/20/2022      Chek why default injection das is not works
     @Column(name = "amount_of_one_color",
             columnDefinition = "integer default 10")
     private Integer amountOfOneColor;
@@ -72,15 +71,12 @@ public class Options {
     private Integer amountOfArtNails;
 
 
-   // @Column(name = "branch_office")      // TODO CREATE nullable = false,      before go to production
-//    private BranchOffice branchOffice;
-
-
     @OneToOne(mappedBy = "options",
                 orphanRemoval = true,
                 cascade = {CascadeType.PERSIST, CascadeType.REMOVE, CascadeType.REFRESH},
                 fetch = FetchType.LAZY)         // TODO: 12/16/2022  check if need change to EAGER
     private Order order;
+
 
 
     public Options(String text) {

@@ -41,10 +41,12 @@ public class Client {
             columnDefinition = "TEXT")
     private String lastName;
 
+
     @Column(name = "password",
             nullable = false,
             columnDefinition = "TEXT")
     private String password;
+
 
     @Column(name = "email",
             nullable = false)
@@ -55,25 +57,30 @@ public class Client {
             nullable = false)
     private String phone;
 
+
     @Enumerated(EnumType.STRING)
     @Column(name = "role",
             nullable = true)
     private Role role;
 
+
     @Column(name = "active",
             nullable = true)
     private Boolean active;
+
 
     @Column(name = "activation_code",
             nullable = true,
             columnDefinition = "TEXT")
     private String activationCode;
 
+
     @OneToMany(mappedBy = "client",
             cascade = CascadeType.ALL/*{CascadeType.PERSIST, CascadeType.REMOVE, CascadeType.REFRESH}*/,
             orphanRemoval = true,
             fetch = FetchType.LAZY)
     private List<Order> order = new ArrayList<>();
+
 
 
     public Client(String firstName, String lastName, String email, String phone, Role role) {

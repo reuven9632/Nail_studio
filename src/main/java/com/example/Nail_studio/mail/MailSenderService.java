@@ -25,6 +25,7 @@ public class MailSenderService implements MailSender{
     private final static Logger LOGGER = LoggerFactory.getLogger(MailSenderService.class);
 
 
+
     @Override
     @Async
     public void send(String to, String subject, String text) {

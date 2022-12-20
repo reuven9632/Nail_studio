@@ -33,6 +33,12 @@ public class Specialist {
     private String name;
 
 
+    @Column(name = "password",
+            nullable = false,
+            columnDefinition = "TEXT")
+    private String password;
+
+
     @Column(name = "email",
             nullable = false,
             columnDefinition = "TEXT")
@@ -50,12 +56,24 @@ public class Specialist {
     private Role role;
 
 
+    @Column(name = "active",
+            nullable = true)
+    private Boolean active;
+
+
+    @Column(name = "activation_code",
+            nullable = true,
+            columnDefinition = "TEXT")
+    private String activationCode;
+
+
     @ManyToOne
     @JoinColumn(name = "branch_office_id",
                 referencedColumnName = "id",
                 /*nullable = false,*/
                 foreignKey = @ForeignKey(name = "Specialist__branchOffice_id_fk"))
     private BranchOffice branchOffice;
+
 
 
     public Specialist(String name, String email, Integer experience, Role role) {
@@ -71,6 +89,16 @@ public class Specialist {
         this.experience = experience;
         this.role = role;
         this.branchOffice = branchOffice;
+    }
+
+    public Specialist(String name, String password, String email, Integer experience, Role role, Boolean active, String activationCode) {
+        this.name = name;
+        this.password = password;
+        this.email = email;
+        this.experience = experience;
+        this.role = role;
+        this.active = active;
+        this.activationCode = activationCode;
     }
 
     @Override
