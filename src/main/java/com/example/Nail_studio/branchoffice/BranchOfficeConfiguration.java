@@ -72,10 +72,9 @@ public class BranchOfficeConfiguration {
 
 
             */
-/** Check Options/Order  *//*
-
+            /** Check Options/Order  *//*
             */
-/*Options option = new Options("some text of options");
+            /*Options option = new Options("some text of options");
             optionsRepository.save(option);
             Options option2 = new Options("some text of options 2 ", alonaNails);
             optionsRepository.save(option2);
@@ -90,12 +89,10 @@ public class BranchOfficeConfiguration {
 
 
 
-
             */
-/** Check Client/Order *//*
-
+            /** Check Client/Order *//*
             */
-/*Client emilSamaev = new Client("Emil", "Samaev", "EmilSamaev@gmail.com", "054-1234568", Role.CLIENT);
+            /*Client emilSamaev = new Client("Emil", "Samaev", "EmilSamaev@gmail.com", "054-1234568", Role.CLIENT);
             clientRepository.save(emilSamaev);
             System.out.println(emilSamaev);
 
@@ -123,10 +120,9 @@ public class BranchOfficeConfiguration {
 
 
             */
-/** Check Feedback/Order *//*
-
+            /** Check Feedback/Order *//*
             */
-/*Feedback someTextOfFeedback = new Feedback("some text of feedback", false, 4, false);
+            /*Feedback someTextOfFeedback = new Feedback("some text of feedback", false, 4, false);
             feedbackRepository.save(someTextOfFeedback);
             System.out.println(someTextOfFeedback);
 
@@ -139,10 +135,9 @@ public class BranchOfficeConfiguration {
 
 
             */
-/** Check Options/BranchOffice *//*
-
+            /** Check Options/BranchOffice *//*
             */
-/*Options option1 = new Options("some text of options", new Order(LocalDateTime.now(), false));
+            /*Options option1 = new Options("some text of options", new Order(LocalDateTime.now(), false));
             optionsRepository.save(option1);
 
 
@@ -157,20 +152,19 @@ public class BranchOfficeConfiguration {
 
 
             */
-/** Check ValidatorResult *//*
-
+            /** Check ValidatorResult *//*
             */
-/*ValidatorResult result = ClientValidator.allValidations().apply(emilSamaev);
+            /*ValidatorResult result = ClientValidator.allValidations().apply(emilSamaev);
             System.out.println("result of validating " + emilSamaev.getFirstName() + " : " + result);
 
 
 
 
             *//*
-*/
-/**Check shipment*//*
-*/
-/*
+            */
+            /**Check shipment*//*
+            */
+            /*
             Shipment shipment = new Shipment(LocalDateTime.now(), false);
             shipmentRepository.save(shipment);
             System.out.println(shipment);*//*
@@ -180,7 +174,7 @@ public class BranchOfficeConfiguration {
 
 
             */
-/**Check Point*//*
+            /**Check Point*//*
 
             // TODO: 10/25/2022         create test of Point.class
 
@@ -188,7 +182,7 @@ public class BranchOfficeConfiguration {
 
 
             */
-/**Check Diary*//*
+            /**Check Diary*//*
 
             // TODO: 10/25/2022         create Diary.class
             // TODO: 10/25/2022         create test of Diary.class
@@ -197,12 +191,11 @@ public class BranchOfficeConfiguration {
 
 
             */
-/**Check Diary*//*
+            /**Check Diary*//*
 
             // TODO: 10/25/2022         create MailSender.class
             // TODO: 10/25/2022         create test of MailSender.class
         };
     }
-
 }
 */

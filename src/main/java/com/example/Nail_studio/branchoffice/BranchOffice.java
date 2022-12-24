@@ -41,7 +41,6 @@ public class BranchOffice {
             columnDefinition = "TEXT")
     private String address;
 
-
     @JsonIgnore//else I have stake overflow exception
     @OneToMany(mappedBy = "branchOffice",
                 cascade = /*CascadeType.ALL*/{CascadeType.PERSIST, CascadeType.REMOVE, CascadeType.MERGE},
