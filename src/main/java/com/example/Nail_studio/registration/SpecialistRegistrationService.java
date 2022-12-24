@@ -1,6 +1,6 @@
 package com.example.Nail_studio.registration;
 
-import com.example.Nail_studio.mail.MailSenderService;
+import com.example.Nail_studio.mail.mail_v1.MailSenderService;
 import com.example.Nail_studio.role.Role;
 import com.example.Nail_studio.specialist.Specialist;
 import com.example.Nail_studio.specialist.SpecialistRepository;
@@ -29,7 +29,7 @@ public class SpecialistRegistrationService {
         specialistRepository.save(specialist);
 
         String message = String.format("Hello %s, \n" +
-                                        "go to link http://localhost:8080/activate/%s",
+                                        "go to link http://localhost:8080/activate/specialist/%s",
                                         specialist.getName(),
                                         specialist.getActivationCode());
         mailSenderService.send(specialist.getEmail(), "registration message from Nail-studio",message);

@@ -1,4 +1,4 @@
-package com.example.Nail_studio.mail;
+package com.example.Nail_studio.mail.mail_v1;
 
 import lombok.Getter;
 import lombok.Setter;

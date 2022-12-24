@@ -33,7 +33,8 @@ public class RegistrationController {
     @PostMapping("/registration/client")
     public String registrationClient(@RequestBody Client client,
                                      Model model){
-        if (!clientRegistrationService.addClient(client)){
+        boolean addClient = clientRegistrationService.addClient(client);
+        if (!addClient){
             model.addAttribute("message", "unable to create client, client with the same name already exists");
             return "registration";
         }
@@ -60,7 +61,7 @@ public class RegistrationController {
      * <p>If the activation operation {@link #clientRegistrationService}{@code .activateClient()} is successful, it sends a message to the view about a positive result,
      * otherwise an activation error message
      */
-    @GetMapping("/activate/{activationCode}")
+    @GetMapping("/activate/client/{activationCode}")
     public String activationClientToken(@PathVariable("activationCode") String activationCode,
                                         Model model){
         if (!clientRegistrationService.activation(activationCode))
@@ -78,7 +79,7 @@ public class RegistrationController {
      * <p>If the activation operation {@link #clientRegistrationService}{@code .activateClient()} is successful, it sends a message to the view about a positive result,
      * otherwise an activation error message
      */
-    @GetMapping("/activate/{activationCode}")
+    @GetMapping("/activate/specialist/{activationCode}")
     public String activationSpecialistToken(@PathVariable("activationCode") String activationCode, Model model){
         if (!specialistRegistrationService.activation(activationCode))
             model.addAttribute("message", "code is invalid, not activated");
