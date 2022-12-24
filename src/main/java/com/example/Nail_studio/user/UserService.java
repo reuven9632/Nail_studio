@@ -1,7 +1,7 @@
 /*
 package com.example.Nail_studio.user;
 
-import com.example.Nail_studio.mail.MailSenderService;
+import com.example.Nail_studio.mail.mail_v1.MailSenderService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;

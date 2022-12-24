@@ -1,12 +1,8 @@
-/*
-package com.example.Nail_studio.mail;
+package com.example.Nail_studio.mail.mail_v1;
 
 import lombok.AllArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.scheduling.annotation.Async;
@@ -24,6 +20,7 @@ public class MailSenderService implements MailSender{
     private final JavaMailSender javaMailSender;
 
     private final static Logger LOGGER = LoggerFactory.getLogger(MailSenderService.class);
+
 
 
     @Override
@@ -44,4 +41,4 @@ public class MailSenderService implements MailSender{
         }
     }
 }
-*/
+

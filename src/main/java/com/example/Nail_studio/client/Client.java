@@ -42,6 +42,12 @@ public class Client {
     private String lastName;
 
 
+    @Column(name = "password",
+            nullable = false,
+            columnDefinition = "TEXT")
+    private String password;
+
+
     @Column(name = "email",
             nullable = false)
     private String email;
@@ -52,9 +58,21 @@ public class Client {
     private String phone;
 
 
+    @Enumerated(EnumType.STRING)
     @Column(name = "role",
-            nullable = false)
+            nullable = true)
     private Role role;
+
+
+    @Column(name = "active",
+            nullable = true)
+    private Boolean active;
+
+
+    @Column(name = "activation_code",
+            nullable = true,
+            columnDefinition = "TEXT")
+    private String activationCode;
 
 
     @OneToMany(mappedBy = "client",
@@ -62,6 +80,7 @@ public class Client {
             orphanRemoval = true,
             fetch = FetchType.LAZY)
     private List<Order> order = new ArrayList<>();
+
 
 
     public Client(String firstName, String lastName, String email, String phone, Role role) {
@@ -72,6 +91,16 @@ public class Client {
         this.role = role;
     }
 
+    public Client(String firstName, String lastName, String password, String email, String phone, Role role, String activationCode, Boolean active) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.password = password;
+        this.email = email;
+        this.phone = phone;
+        this.role = role;
+        this.activationCode = activationCode;
+        this.active = active;
+    }
 
     //todo check method addOrder    and    removeOrder
     public void addOrder(Order order) {
@@ -86,6 +115,14 @@ public class Client {
         }
     }
 
+    public Boolean isActive(Boolean active){
+        return active;
+    }
+
+    public void setActive(Boolean active) {
+        this.active = active;
+    }
+
     @Override
     public String toString() {
         return "Client{" +
@@ -98,17 +135,4 @@ public class Client {
                 ", order=" + order +
                 '}';
     }
-
-    /*@Override
-    public String toString() {
-        return "Client{" +
-                "id=" + id +
-                ", firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", email='" + email + '\'' +
-                ", phone='" + phone + '\'' +
-                ", role=" + role +
-                '}';
-    }*/
-
 }

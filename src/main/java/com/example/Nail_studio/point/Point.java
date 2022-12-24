@@ -32,9 +32,11 @@ public class Point {
     // TODO: 10/25/2022     create @OneToOne relationShip with Client.class
 
 
+
     public Point(Integer amount) {
         this.amount = amount;
     }
+
 
 
     @Override

@@ -12,6 +12,8 @@ public class MvcConfig implements WebMvcConfigurer{
         registry.addViewController("/login").setViewName("login");
     }
 
+
+
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         /**test to connect css and js for Alona of templates/app/index.html*/
@@ -24,6 +26,7 @@ public class MvcConfig implements WebMvcConfigurer{
                 .addResourceLocations("classpath:/templates/app/js/");
         registry.addResourceHandler("fonts/**")
                 .addResourceLocations("classpath:/templates/app/fonts/");
+
 
         /**test to connect css and js for Alona of templates/index.html */
         registry.addResourceHandler("app/css/**")

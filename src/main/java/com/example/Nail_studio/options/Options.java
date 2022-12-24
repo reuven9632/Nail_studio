@@ -1,6 +1,5 @@
 package com.example.Nail_studio.options;
 
-import com.example.Nail_studio.branchoffice.BranchOffice;
 import com.example.Nail_studio.order.Order;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -16,7 +15,6 @@ import javax.persistence.*;
 @Entity(name = "Options")
 @Table(name = "options")
 public class Options {
-
 
     @Id
     @SequenceGenerator(name = "options_id_sequence",
@@ -34,19 +32,20 @@ public class Options {
             columnDefinition = "TEXT")
     private String text;
 
-    /**Chek why default injection das is not works*/
+
+    // TODO: 12/20/2022      Chek why default injection das is not works
     @Column(name = "builded_nails",
             columnDefinition = "BOOLEAN DEFAULT FALSE")
     private Boolean buildedNails;
 
 
-    /**Chek why default injection das is not works*/
+    // TODO: 12/20/2022      Chek why default injection das not works
     @Column(name = "one_color",
             columnDefinition = "BOOLEAN DEFAULT FALSE")
     private Boolean oneColor;
 
 
-    /**Chek why default injection das is not works*/
+    // TODO: 12/20/2022      Chek why default injection das is not works
     @Column(name = "amount_of_one_color",
             columnDefinition = "integer default 10")
     private Integer amountOfOneColor;
@@ -72,20 +71,12 @@ public class Options {
     private Integer amountOfArtNails;
 
 
-    @ManyToOne
-    @JoinColumn(name = "branch_office_id",
-                referencedColumnName = "id",
-                // TODO CREATE nullable = false,      before go to prodaction
-                foreignKey = @ForeignKey(name = "options__branchOffice_id_fk"))
-    private BranchOffice branchOffice;
-
-
     @OneToOne(mappedBy = "options",
                 orphanRemoval = true,
                 cascade = {CascadeType.PERSIST, CascadeType.REMOVE, CascadeType.REFRESH},
-//            todo Ceck if need change to EAGER
-                fetch = FetchType.LAZY)
+                fetch = FetchType.LAZY)         // TODO: 12/16/2022  check if need change to EAGER
     private Order order;
+
 
 
     public Options(String text) {
@@ -98,18 +89,6 @@ public class Options {
         order.setOptions(this);
     }
 
-    public Options(String text, BranchOffice branchOffice) {
-        this.text = text;
-        this.branchOffice = branchOffice;
-    }
-
-    public Options(String text, BranchOffice branchOffice, Order order) {
-        this.text = text;
-        this.branchOffice = branchOffice;
-        this.order = order;
-        order.setOptions(this);
-    }
-
     public Options(String text,
                    Boolean buildedNails,
                    Boolean oneColor,
@@ -118,7 +97,6 @@ public class Options {
                    Integer amountOfGradient,
                    Boolean artNails,
                    Integer amountOfArtNails,
-                   BranchOffice branchOffice,
                    Order order) {
         this.text = text;
         this.buildedNails = buildedNails;
@@ -128,21 +106,9 @@ public class Options {
         this.amountOfGradient = amountOfGradient;
         this.artNails = artNails;
         this.amountOfArtNails = amountOfArtNails;
-        this.branchOffice = branchOffice;
         this.order = order;
         order.setOptions(this);
     }
-
-    public void addToBranchOffice(BranchOffice branchOffice){
-        this.branchOffice = branchOffice;
-        this.branchOffice.getOptions().add(this);
-    }
-
-    public void removeOptionFromBranchOffice(BranchOffice branchOffice){
-        this.branchOffice = null;
-        this.branchOffice.getOptions().remove(this);
-    }
-
 
 
     public void setOrder(Order order){
@@ -163,7 +129,6 @@ public class Options {
                 ", amountOfGradient=" + amountOfGradient +
                 ", artNails=" + artNails +
                 ", amountOfArtNails=" + amountOfArtNails +
-                ", branchOffice=" + branchOffice +
                 '}';
     }
 }

@@ -13,7 +13,7 @@ cat <fileName>...	show file cod		   		Example: cat index.html(do not work on ter
 
 
 
-kmdir <nameFile>...	create folder on this folder	example: mkdir test
+mkdir <nameFile>...	create folder on this folder	example: mkdir test
 
 touch <nameFile>...	create file on this folder	example: touch index.html
 
@@ -77,7 +77,7 @@ git branch -r			response name of branch on remote(-r  ->  remote)
 
 git branch -a			response name of branch on local machine and remote
 
-git btanch <nameNewBranch>	create new branch
+git branch <nameNewBranch>	create new branch
 				example: git branch feature-a
 
 git checkout -b <nameNewBranch>	create new branch and go checkout on there, that's means
@@ -103,14 +103,51 @@ git branch -d <nameBranchToDelete>	to delete branch	example: git branch -d branc
 
 git remote add origin git@github.com:reuven1856/Nail-studio.git		???
 
-git push -u origin main				push changes to main branch on github
+git push -u origin main				                push changes to main branch on github
+
+git push --set-upstream origin <nameNewBranch>      to create new branch on local machine and push to remote
+                                                    example:     git push --set-upstream origin registration
 
 
 
 --------------------------------------------------------------------------------------------
-#PULL
+#PULL,REBASE
 
-git pull		take changes from remote server(github)
+git pull			take changes from remote server(github)
+
+git pull -r origin main		(-r   ->    rebase)
+git pull --rebase origin main	                    download from remote branch(main)	need before push
+				1. Take my commits and pushes them aside and marge my branch with main branch
+				2. git add . 			for adding files and changes of code from my commits of feature-a branch
+				3. git rebase --continue	for continue our operation  of pull before push
+				4. If I have conflict need fix it manually(Checkout with current main branch and first commit of my current branch feature-a)
+
+				5. git add . 			again for adding files and changes of code from my commits of feature-a branch
+				6. git rebase --continue	again for continue our operation  of pull before push
+
+				5. git push			and maybe I will have more one conflict, need fix it manualy too
+				6. git push -f			after fixing of problems (-f means force) force push command
+
+git rebase --continue		for continue our operation  of pull before push
+
+git push -f			after fixing of problems (-f means force) force push command
+
+git rebase --abort		to abort and get back to the state before as in the example above on 1. point
+
+gti rebase --skip		you can instead skip this commit as in the example above on 1. point
+
+
+git pull -r origin main		same as 	git pull rebase origin main      (-r  means  rebase)
+
+
+--------------------------------------------------------------------------------------------
+#PUSH
+
+git push -u origin main		push changes to main branch on github
+
+git push -f			after fixing of problems (-f means force) force push command
+
+
 --------------------------------------------------------------------------------------------
 --------------------------------------------------------------------------------------------
 --------------------------------------------------------------------------------------------
