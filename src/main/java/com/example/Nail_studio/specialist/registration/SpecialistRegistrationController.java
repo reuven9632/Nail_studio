@@ -1,4 +1,4 @@
-package com.example.Nail_studio.registration;
+package com.example.Nail_studio.specialist.registration;
 
 import com.example.Nail_studio.specialist.Specialist;
 import lombok.AllArgsConstructor;
@@ -35,7 +35,7 @@ public class SpecialistRegistrationController {
     }
 
 
-    // TODO: 12/20/2022  upgrade this code , has many same code
+    // TODO: 12/20/2022  upgrade this code , has many same code with ClientRegistrationController
     /**
      * {@link #activationSpecialistToken(String, Model)}
      * <p>Accepts an external URL request, coming from a link in an email.

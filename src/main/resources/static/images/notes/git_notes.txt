@@ -95,6 +95,8 @@ git branch -M main		gives name to main branch
 
 git branch -d <nameBranchToDelete>	to delete branch	example: git branch -d branchNameToDelete
 
+git fetch origin        ?? added new branches from remote (github)
+
 
 
 
