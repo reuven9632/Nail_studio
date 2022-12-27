@@ -2,6 +2,7 @@ package com.example.Nail_studio.client;
 
 import com.example.Nail_studio.order.Order;
 import com.example.Nail_studio.role.Role;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -65,8 +66,13 @@ public class Client {
 
 
     @Column(name = "active",
-            nullable = true)
-    private Boolean active;
+            nullable = false)
+    private Boolean active = false;
+
+
+    @Column(name = "locked",
+            nullable = false)
+    private boolean locked = false;
 
 
     @Column(name = "activation_code",
@@ -100,6 +106,17 @@ public class Client {
         this.role = role;
         this.activationCode = activationCode;
         this.active = active;
+    }
+
+    public Client(String firstName, String lastName, String password, String email, String phone, Role role, Boolean active, String activationCode) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.password = password;
+        this.email = email;
+        this.phone = phone;
+        this.role = role;
+        this.active = active;
+        this.activationCode = activationCode;
     }
 
     //todo check method addOrder    and    removeOrder

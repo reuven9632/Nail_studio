@@ -1,4 +1,4 @@
-package com.example.Nail_studio.registration;
+package com.example.Nail_studio.client.registration;
 
 import com.example.Nail_studio.client.Client;
 import com.example.Nail_studio.client.ClientRepository;
@@ -21,9 +21,7 @@ public class ClientRegistrationService {
     /**
      * @param client
      *        response from view @RegistrationController
-     *
      * @return  {@code true} -  adding client successful, {@code false} -  adding client abort
-     *
      * @version  1.0
      */
     public boolean addClient(Client client) {
@@ -33,7 +31,7 @@ public class ClientRegistrationService {
         client.setActive(false);
         client.setRole(Role.CLIENT);
         client.setActivationCode(UUID.randomUUID().toString());
-        clientRepository.save(client);
+        clientRepository.saveAndFlush(client);
 
 
         // TODO: 12/24/2022 debug this function and open it
@@ -41,15 +39,16 @@ public class ClientRegistrationService {
                                         "go to link: http://localhost:8081/activate/client/%s",
                                         client.getFirstName(),
                                         client.getActivationCode());
-        mailSenderService.send(client.getEmail(), "Activation code", message);*/
+        mailSenderService.send(client.getEmail(), "registration message from Nail-studio", message);*/
         return true;
     }
 
     /**
      * @param activationCode
      *        {@code URL} reference from mail message
+     * <p>{@code clientRepository.findByActivationCode(activationCode)} - find and than check if {@code Client}.class
+     * have an activation code, that`s means if {@code activationCode} equals null - this client are already {@code isActive = true}
      * @return {@code true} -  client activation successful,  {@code false} -  client activation abort
-     *
      * @version  1.0
      */
     public boolean activation(String activationCode) {

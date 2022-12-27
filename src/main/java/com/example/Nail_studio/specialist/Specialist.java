@@ -52,13 +52,18 @@ public class Specialist {
 
     @Enumerated(EnumType.STRING)
     @Column(name = "role",
-            nullable = false)
+            nullable = true)
     private Role role;
 
 
     @Column(name = "active",
             nullable = true)
     private Boolean active;
+
+
+    @Column(name = "locked",
+            nullable = true)
+    private boolean locked = false;
 
 
     @Column(name = "activation_code",

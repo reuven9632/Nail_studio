@@ -1,4 +1,4 @@
-package com.example.Nail_studio.registration;
+package com.example.Nail_studio.specialist.registration;
 
 import com.example.Nail_studio.mail.mail_v1.MailSenderService;
 import com.example.Nail_studio.role.Role;
@@ -26,13 +26,14 @@ public class SpecialistRegistrationService {
         specialist.setActive(false);
         specialist.setRole(Role.SPECIALIST);
         specialist.setActivationCode(UUID.randomUUID().toString());
-        specialistRepository.save(specialist);
+        specialistRepository.saveAndFlush(specialist);
 
-        String message = String.format("Hello %s, \n" +
+        // TODO: 12/27/2022 debug this function and open it
+        /*String message = String.format("Hello %s, \n" +
                                         "go to link http://localhost:8080/activate/specialist/%s",
                                         specialist.getName(),
                                         specialist.getActivationCode());
-        mailSenderService.send(specialist.getEmail(), "registration message from Nail-studio",message);
+        mailSenderService.send(specialist.getEmail(), "registration message from Nail-studio", message);*/
         return true;
     }
 

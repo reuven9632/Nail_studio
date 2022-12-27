@@ -1,4 +1,4 @@
-package com.example.Nail_studio.registration;
+package com.example.Nail_studio.client.registration;
 
 
 import com.example.Nail_studio.client.Client;
