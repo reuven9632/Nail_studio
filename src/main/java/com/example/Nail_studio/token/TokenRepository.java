@@ -16,5 +16,5 @@ public interface TokenRepository extends JpaRepository<Token, Long> {
 
     @Transactional
     @Query("UPDATE Token t SET t.confirmedAt = ?2 WHERE t.token = ?1")
-    int setConfirmedAt(String token, LocalDateTime now);
+    int updateConfirmedAt(String token, LocalDateTime now);
 }

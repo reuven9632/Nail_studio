@@ -20,7 +20,7 @@ public class TokenService {
         return tokenRepository.findByToken(token);
     }
 
-    public int updateConfirmedToken(String token){
-        return tokenRepository.setConfirmedAt(token, LocalDateTime.now());
+    public int setConfirmedToken(String token){
+        return tokenRepository.updateConfirmedAt(token, LocalDateTime.now());
     }
 }
