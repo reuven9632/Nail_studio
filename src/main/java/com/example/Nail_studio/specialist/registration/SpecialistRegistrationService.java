@@ -1,4 +1,4 @@
-package com.example.Nail_studio.registration;
+package com.example.Nail_studio.specialist.registration;
 
 import com.example.Nail_studio.mail.mail_v1.MailSenderService;
 import com.example.Nail_studio.role.Role;
@@ -19,20 +19,30 @@ public class SpecialistRegistrationService {
 
 
 
-    public boolean addSpecialist(Specialist specialist) {
-        if (specialistRepository.findByEmail(specialist.getEmail()).isPresent())
+    public boolean addSpecialist(SpecialistRegistrationRequest request) {
+        if (specialistRepository.findByEmail(request.getEmail()).isPresent())
             return false;
 
-        specialist.setActive(false);
-        specialist.setRole(Role.SPECIALIST);
-        specialist.setActivationCode(UUID.randomUUID().toString());
-        specialistRepository.save(specialist);
+        // TODO: 12/27/2022 make validation before adding to new Specialist
+        Specialist specialist = new Specialist(request.getName(),
+                                                request.getPassword(),
+                                                request.getEmail(),
+                                                request.getExperience(),
+                                                Role.SPECIALIST,
+                                                false,
+                                                UUID.randomUUID().toString());
 
-        String message = String.format("Hello %s, \n" +
+        /*specialist.setActive(false);
+        specialist.setRole(Role.SPECIALIST);
+        specialist.setActivationCode(UUID.randomUUID().toString());*/
+        specialistRepository.saveAndFlush(specialist);
+
+        // TODO: 12/27/2022 debug this function and open it
+        /*String message = String.format("Hello %s, \n" +
                                         "go to link http://localhost:8080/activate/specialist/%s",
                                         specialist.getName(),
                                         specialist.getActivationCode());
-        mailSenderService.send(specialist.getEmail(), "registration message from Nail-studio",message);
+        mailSenderService.send(specialist.getEmail(), "registration message from Nail-studio", message);*/
         return true;
     }
 
