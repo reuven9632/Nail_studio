@@ -24,9 +24,9 @@ public class SpecialistRegistrationController {
      *  <p>If existing of {@code Specialist} object is successfully - sends message to view with a positive result, otherwise message with problem
      */
     @PostMapping("/registration/specialist")
-    public String registrationSpecialist(@RequestBody Specialist specialist,
+    public String registrationSpecialist(@RequestBody SpecialistRegistrationRequest request,
                                          Model model){
-        if (!specialistRegistrationService.addSpecialist(specialist)) {
+        if (!specialistRegistrationService.addSpecialist(request)) {
             model.addAttribute("message", "unable to create specialist, specialist with the same name already exists");
             return "registration";
         }

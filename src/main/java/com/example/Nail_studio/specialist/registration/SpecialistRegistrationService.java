@@ -19,13 +19,22 @@ public class SpecialistRegistrationService {
 
 
 
-    public boolean addSpecialist(Specialist specialist) {
-        if (specialistRepository.findByEmail(specialist.getEmail()).isPresent())
+    public boolean addSpecialist(SpecialistRegistrationRequest request) {
+        if (specialistRepository.findByEmail(request.getEmail()).isPresent())
             return false;
 
-        specialist.setActive(false);
+        // TODO: 12/27/2022 make validation before adding to new Specialist
+        Specialist specialist = new Specialist(request.getName(),
+                                                request.getPassword(),
+                                                request.getEmail(),
+                                                request.getExperience(),
+                                                Role.SPECIALIST,
+                                                false,
+                                                UUID.randomUUID().toString());
+
+        /*specialist.setActive(false);
         specialist.setRole(Role.SPECIALIST);
-        specialist.setActivationCode(UUID.randomUUID().toString());
+        specialist.setActivationCode(UUID.randomUUID().toString());*/
         specialistRepository.saveAndFlush(specialist);
 
         // TODO: 12/27/2022 debug this function and open it
