@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 package com.example.Nail_studio.token;
 
 import lombok.AllArgsConstructor;
@@ -24,7 +23,4 @@ public class TokenService {
     public int updateConfirmedToken(String token){
         return tokenRepository.setConfirmedAt(token, LocalDateTime.now());
     }
-=======
-package com.example.Nail_studio.token;public class TokenService {
->>>>>>> f68fbc5 (create token -> ..., changes on registration and specialist)
 }
