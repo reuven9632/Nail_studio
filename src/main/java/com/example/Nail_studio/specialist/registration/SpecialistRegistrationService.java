@@ -34,7 +34,11 @@ public class SpecialistRegistrationService {
 
         /*specialist.setActive(false);
         specialist.setRole(Role.SPECIALIST);
+<<<<<<< HEAD:src/main/java/com/example/Nail_studio/specialist/registration/SpecialistRegistrationService.java
         specialist.setActivationCode(UUID.randomUUID().toString());*/
+=======
+        specialist.setActivationCode(UUID.randomUUID().toString());
+>>>>>>> 80505ee (change location of registration files/ update files registration):src/main/java/com/example/Nail_studio/registration/SpecialistRegistrationService.java
         specialistRepository.saveAndFlush(specialist);
 
         // TODO: 12/27/2022 debug this function and open it
