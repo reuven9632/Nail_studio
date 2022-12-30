@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 package com.example.Nail_studio.token;
 
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -17,4 +18,7 @@ public interface TokenRepository extends JpaRepository<Token, Long> {
     @Transactional
     @Query("UPDATE Token t SET t.confirmedAt = ?2 WHERE t.token = ?1")
     int setConfirmedAt(String token, LocalDateTime now);
+=======
+package com.example.Nail_studio.token;public class TokenRepository {
+>>>>>>> f68fbc5 (create token -> ..., changes on registration and specialist)
 }

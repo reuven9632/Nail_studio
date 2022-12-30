@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 package com.example.Nail_studio.token;
 
 import com.example.Nail_studio.client.Client;
@@ -79,4 +80,7 @@ public class Token {
         this.expiresAt = expiresAt;
         this.client = client;
     }
+=======
+package com.example.Nail_studio.token;public class Token {
+>>>>>>> f68fbc5 (create token -> ..., changes on registration and specialist)
 }
