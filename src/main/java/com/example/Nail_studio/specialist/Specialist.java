@@ -106,6 +106,8 @@ public class Specialist {
         this.activationCode = activationCode;
     }
 
+
+
     @Override
     public String toString() {
         return "Specialist{" +
