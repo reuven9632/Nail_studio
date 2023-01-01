@@ -1,7 +1,5 @@
-/*
-package com.example.Nail_studio.config;
+package com.example.Nail_studio.security;
 
-import com.example.Nail_studio.user.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
@@ -14,16 +12,27 @@ import org.springframework.security.crypto.password.NoOpPasswordEncoder;
 @EnableWebSecurity
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
-    @Autowired
-    private UserService userService;
+    @Override
+    protected void configure(HttpSecurity http) throws Exception {
+        http
+                .authorizeRequests()
+                .anyRequest()
+                .authenticated()
+                .and()
+                .httpBasic();
+    }
+}
+
+
+/*@Configuration
+@EnableWebSecurity
+public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
                 .authorizeRequests()
-                    .antMatchers("/**", "/registration", "/activate/*"*/
-/*, "/css/**", "/images/**", "/js/**", "/fonts/**"*//*
-).permitAll()
+                    .antMatchers("/**", "/registration", "/activate/*", "/css/**", "/images/**", "/js/**", "/fonts/**").permitAll()
                     .anyRequest().authenticated()
                 .and()
                     .formLogin()
@@ -36,12 +45,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth.userDetailsService(userService)               */
-/*             his options located on: service/UserService
-                                                            and need @Autowired   private UserService userService;    *//*
-
+        *//**
+         * his options located on: service/UserService and need @Autowired   private UserService userService;
+         *//*
+        auth.userDetailsService(userService)
                 .passwordEncoder(NoOpPasswordEncoder.getInstance());
     }
+}*/
 
-}
-*/
