@@ -1,21 +1,31 @@
 package com.example.Nail_studio.security;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import com.example.Nail_studio.role.Permissions;
+import com.example.Nail_studio.role.Role;
+import lombok.AllArgsConstructor;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-import org.springframework.security.crypto.password.NoOpPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
+@AllArgsConstructor
 @Configuration
 @EnableWebSecurity
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
+
+    private PasswordEncoder passwordEncoder;
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
                 .authorizeRequests()
+                .antMatchers("/", "/a", "/css/**", "/js/**", "/images/**", "/fonts/**").permitAll()
+                .antMatchers("/admin/**").hasRole(Role.ADMINISTRATOR.name())
+                .antMatchers(HttpMethod.GET, "/management/**").hasAnyRole(Role.SPECIALIST.name(), Role.ADMINISTRATOR.name())
+                .antMatchers(HttpMethod.POST, "/management/**").hasAuthority(Permissions.DIARY_WRITE.name())
+                .antMatchers(HttpMethod.DELETE, "/management/**").hasAnyAuthority(Permissions.ORDER_DROP.name(), Permissions.OPTION_EXTRA.name())  // TODO: 1/8/2023   check if I steel need this option  -> Permissions.OPTION_EXTRA.name()    before production 
                 .anyRequest()
                 .authenticated()
                 .and()

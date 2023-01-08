@@ -4,12 +4,14 @@ import com.google.common.collect.Sets;
 
 import java.util.Set;
 
+import static com.example.Nail_studio.role.Permissions.*;
+
 public enum Role {
 
-    USER(Sets.newHashSet(Permissions.DIARY_READ,Permissions.ORDER_CREATE,Permissions.ORDER_DROP)),
-    CLIENT(Sets.newHashSet(Permissions.DIARY_READ, Permissions.ORDER_CREATE, Permissions.ORDER_DROP)),
-    SPECIALIST(Sets.newHashSet(Permissions.DIARY_READ, Permissions.DIARY_WRITE, Permissions.ORDER_CREATE, Permissions.ORDER_DROP)),
-    ADMINISTRATOR(Sets.newHashSet(Permissions.DIARY_READ, Permissions.DIARY_WRITE, Permissions.ORDER_CREATE, Permissions.ORDER_DROP, Permissions.OPTION_EXTRA, Permissions.OPTION_HIDE));
+    USER(Sets.newHashSet(DIARY_READ, ORDER_CREATE, ORDER_DROP)),
+    CLIENT(Sets.newHashSet(DIARY_READ, ORDER_CREATE, ORDER_DROP)),
+    SPECIALIST(Sets.newHashSet(DIARY_READ, DIARY_WRITE, ORDER_CREATE, ORDER_DROP)),
+    ADMINISTRATOR(Sets.newHashSet(DIARY_READ, DIARY_WRITE, ORDER_CREATE, ORDER_DROP, OPTION_EXTRA, OPTION_HIDE));
 
 
 
