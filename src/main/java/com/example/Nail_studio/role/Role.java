@@ -12,7 +12,18 @@ public enum Role {
     USER(Sets.newHashSet(DIARY_READ, ORDER_CREATE, ORDER_DROP)),
     CLIENT(Sets.newHashSet(DIARY_READ, ORDER_CREATE, ORDER_DROP)),
     SPECIALIST(Sets.newHashSet(DIARY_READ, DIARY_WRITE, ORDER_CREATE, ORDER_DROP)),
-    ADMINISTRATOR(Sets.newHashSet(DIARY_READ, DIARY_WRITE, ORDER_CREATE, ORDER_DROP, OPTION_EXTRA, OPTION_HIDE));
+    ADMINISTRATOR(Sets.newHashSet(DIARY_READ,
+                                            DIARY_WRITE,
+                                            ORDER_CREATE,
+                                            ORDER_DROP,
+                                            OPTION_EXTRA,
+                                            OPTION_HIDE,
+                                            SPECIALIST_ADD,
+                                            SPECIALIST_EDIT,
+                                            SPECIALIST_DELL,
+                                            DEPARTMENT_ADD,
+                                            DEPARTMENT_EDIT,
+                                            DEPARTMENT_DELL));
 
 
     private final Set<Permissions> permissions;
