@@ -16,9 +16,10 @@ public class MvcConfig implements WebMvcConfigurer{
 
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
-        /**test to connect css and js for Alona of templates/app/index.html*/
 
+        /**test to connect css and js for Alona of templates/app/index.html*/
         registry.addResourceHandler("css/**")
+                /*need add / to path on html*/
                 .addResourceLocations("classpath:/templates/app/css/");
         registry.addResourceHandler("images/**")
                 .addResourceLocations("classpath:/templates/app/images/");
@@ -28,20 +29,20 @@ public class MvcConfig implements WebMvcConfigurer{
                 .addResourceLocations("classpath:/templates/app/fonts/");
 
 
-        /**test to connect css and js for Alona of templates/index.html */
+        /**test to connect css and js for Alona of templates/index.html
+         * .addResourceHandler("app/css/**")     какой ресурс искать
+         * .addResourceLocations("classpath:/templates/app/css/");    где искать нужный ресурс*/
         registry.addResourceHandler("app/css/**")
-        /**какой ресурс искать*/
                 .addResourceLocations("classpath:/templates/app/css/");
-        /**где искать нужный ресурс*/
-
         registry.addResourceHandler("app/images/**")
                 .addResourceLocations("classpath:/templates/app/images/");
         registry.addResourceHandler("app/js/**")
                 .addResourceLocations("classpath:/templates/app/js/");
+        registry.addResourceHandler("app/fonts/**")
+                .addResourceLocations("classpath:/templates/app/fonts/");
 
 
         /**test to connect Thymeleaf blocs for Alona of templates/app/index.html */
-
         registry.addResourceHandler("blocs/**")
                 .addResourceLocations("classpath:/templates/blocs/");
 

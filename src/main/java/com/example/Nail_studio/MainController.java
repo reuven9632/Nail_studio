@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 //@RestController//return string whats was write the same word -> not .html    on folder ../templates/..  !!
 //@AllArgsConstructor
 @Controller
+@RequestMapping("/main/c")
 public class MainController {
 
 

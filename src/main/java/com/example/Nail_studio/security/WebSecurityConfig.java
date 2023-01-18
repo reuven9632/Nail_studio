@@ -12,6 +12,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.provisioning.InMemoryUserDetailsManager;
+import org.springframework.security.web.csrf.CookieCsrfTokenRepository;
 
 import static com.example.Nail_studio.role.Role.ADMINISTRATOR;
 
@@ -29,9 +30,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
+//                .csrf().csrfTokenRepository(CookieCsrfTokenRepository.withHttpOnlyFalse())
+//                .and()
                 .csrf().disable()
                 .authorizeRequests()
-                .antMatchers("/", "/a", "/css/**", "/js/**", "/images/**", "/fonts/**", "app/index").permitAll()
+                .antMatchers("/", "/main/**", "/css/**", "/images/**", "/js/**", "/fonts/**").permitAll()
 //                .antMatchers("/admin/**").hasRole(ADMINISTRATOR.name())
 //                .antMatchers(HttpMethod.GET, "/management/**").hasAnyRole(SPECIALIST.name(), ADMINISTRATOR.name())
 //                .antMatchers(HttpMethod.POST, "/management/**").hasAuthority(DIARY_WRITE.getPermission())
@@ -39,7 +42,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .anyRequest()
                 .authenticated()
                 .and()
-                .httpBasic();
+//                .httpBasic();
+                .formLogin()
+                .defaultSuccessUrl("/main/c/a", true);
     }
 
 
@@ -48,8 +53,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected UserDetailsService userDetailsService(){
         UserDetails greg = User.builder()
-                .username("Greg")
-                .password(passwordEncoder.encode("password"))
+                .username("q")
+                .password(passwordEncoder.encode("1"))
                 .roles(ADMINISTRATOR.name())
                 .authorities(ADMINISTRATOR.getGrantedAuthorities())
                 .build();
